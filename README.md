@@ -34,7 +34,7 @@ by adding `pipe_operators` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:pipe_operators, git: "https://github.com/leve-express/pipe_operators.git", tag: "0.1"},
+    {:pipe_operators, git: "https://github.com/leveexpress/pipe_operators.git", tag: "0.1"},
   ]
 end
 ```
