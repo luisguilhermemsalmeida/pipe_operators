@@ -22,6 +22,8 @@ erl_crash.dump
 # Ignore package tarball (built via "mix hex.build").
 pipe_operators-*.tar
 
-
 # Temporary files for e.g. tests
 /tmp
+
+# ide related
+.idea/
