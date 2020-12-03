@@ -19,6 +19,20 @@ defmodule PipeOperators.SkipOnErrorPipeTest do
     assert {:error, "this operation failed"} == result
   end
 
+  test "SkipOnErrorPipe should call each step only once" do
+    1
+    ~> send_single_message_to_process_mailbox()
+    ~> send_single_message_to_process_mailbox()
+
+    messages = :erlang.process_info(self(), :messages)
+
+    assert messages == {:messages, [1, 1]}
+  end
+
+  defp send_single_message_to_process_mailbox(item) do
+    send(self(), item)
+  end
+
   defp fail_function(_whatever) do
     {:error, "this operation failed"}
   end
