@@ -23,10 +23,11 @@ defmodule PipeOperators.SkipOnErrorPipeTest do
     1
     ~> send_single_message_to_process_mailbox()
     ~> send_single_message_to_process_mailbox()
+    ~> send_single_message_to_process_mailbox()
 
     messages = :erlang.process_info(self(), :messages)
 
-    assert messages == {:messages, [1, 1]}
+    assert messages == {:messages, [1, 1, 1]}
   end
 
   defp send_single_message_to_process_mailbox(item) do
