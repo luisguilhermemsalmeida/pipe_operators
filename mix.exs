@@ -7,7 +7,9 @@ defmodule PipeOperators.MixProject do
       version: "0.1.1",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      package: package(),
+      description: description(),
     ]
   end
 
@@ -21,5 +23,18 @@ defmodule PipeOperators.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     []
+  end
+
+  defp package() do
+    [
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/luisguilhermemsalmeida/pipe_operators"}
+    ]
+  end
+
+  defp description() do
+    ~s"""
+    This lib adds a "new" pipe operator that is similar to the Maybe type on other functional programming languages.
+    """
   end
 end
