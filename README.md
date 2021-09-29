@@ -34,12 +34,7 @@ by adding `pipe_operators` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:pipe_operators, git: "https://github.com/leveexpress/pipe_operators.git", branch: "main"},
+    {:pipe_operators, "~> 0.1.1"},
   ]
 end
 ```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/pipe_operators](https://hexdocs.pm/pipe_operators).
-
